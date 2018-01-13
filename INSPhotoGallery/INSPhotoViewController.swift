@@ -24,10 +24,8 @@ open class INSPhotoViewController: UIViewController, UIScrollViewDelegate {
     
     var longPressGestureHandler: ((UILongPressGestureRecognizer) -> ())?
     
-    lazy private(set) var scalingImageView: INSScalingImageView = {
-        return INSScalingImageView()
-    }()
-    
+    let scalingImageView = INSScalingImageView()
+
     lazy private(set) var doubleTapGestureRecognizer: UITapGestureRecognizer = {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(INSPhotoViewController.handleDoubleTapWithGestureRecognizer(_:)))
         gesture.numberOfTapsRequired = 2
